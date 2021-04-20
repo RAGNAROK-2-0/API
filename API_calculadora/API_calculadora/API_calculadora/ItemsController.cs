@@ -81,12 +81,9 @@ DATA_INSERIDO TIMESTAMP NOT NULL,
         {
             itens.Clear();
 
-            //NpgsqlConnection conn = new NpgsqlConnection("postgres://qplkemryuxkzar:b5b4b8a68c0eb36a8d7d28d4a1a3c2d6fe3ed8d75badd09f611ade3a38100f69@Server=ec2-23-21-229-200.compute-1.amazonaws.com:5432/d1n6ia2nei0rp0");
+            
 
-            //var connString = "Server=ec2-23-21-229-200.compute-1.amazonaws.com;Port=5432;User Id=qplkemryuxkzar;Password=b5b4b8a68c0eb36a8d7d28d4a1a3c2d6fe3ed8d75badd09f611ade3a38100f69;Database=d1n6ia2nei0rp0;";
-
-
-            using (var conn = new NpgsqlConnection("User ID =lmzbqjgdarlvte; Password =1bb829a00da2d53999826b2e32b86af9aff29a33a7d9fff483f6f1f7f4f87b61; Host =ec2-52-87-107-83.compute-1.amazonaws.com; Port =5432; Database =db9lde3i86qlva; Pooling = true; Use SSL Stream = True; SSL Mode = Require; TrustServerCertificate = True; "))
+            using (var conn = new NpgsqlConnection("User ID =; Password =; Host =; Port =5432; Database =; Pooling = true; Use SSL Stream = True; SSL Mode = Require; TrustServerCertificate = True; "))
             {
                 conn.Open();
 
