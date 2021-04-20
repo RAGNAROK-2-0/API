@@ -17,7 +17,7 @@ namespace API_calculadora.Controllers
         //[HttpGet]
         public List<AG_ITEM_PRINCIPAL> Get()
         {
-            pegarDados();
+            fillItens();
 
             return itens;
         }
@@ -27,10 +27,6 @@ namespace API_calculadora.Controllers
         {
         }
 
-        // PUT api/values/5
-        public void Put(int id, [FromBody] string value)
-        {
-        }
 
         // DELETE api/values/5
         public void Delete(int id)
@@ -79,9 +75,9 @@ DATA_INSERIDO TIMESTAMP NOT NULL,
 )
 
         INSERT INTO AG_ITEM_PRINCIPAL (NOME_ITEM,DATA_INSERIDO,NOME_ICONE) VALUES ('COXINHA',NOW(),'')
-         * */
+         * */ //DB DATA
 
-        public void pegarDados()
+        public void fillItens()
         {
             itens.Clear();
 
@@ -94,13 +90,82 @@ DATA_INSERIDO TIMESTAMP NOT NULL,
             {
                 conn.Open();
 
-                // NpgsqlCommand command = new NpgsqlCommand("SELECT * FROM AG_ITEM_PRINCIPAL", conn);
-                NpgsqlCommand command = new NpgsqlCommand("INSERT INTO AG_ITEM_PRINCIPAL (NOME_ITEM,DATA_INSERIDO,NOME_ICONE) VALUES ('COXINHA',NOW(),'')", conn);
+                {
+                    // NpgsqlCommand command = new NpgsqlCommand("SELECT * FROM AG_ITEM_PRINCIPAL", conn);
+                    NpgsqlCommand command = new NpgsqlCommand("SELECT * FROM AG_ITEM_PRINCIPAL", conn);
 
-                NpgsqlDataReader dr = command.ExecuteReader();
+                    NpgsqlDataReader dr = command.ExecuteReader();
+                    while (dr.Read())
+                    {
 
-                Console.WriteLine("I hope that works");
+                        //(int id, string nome, DateTime data, string icone)
 
+
+                        int id = dr.GetInt32(0);
+                        string nome = dr.GetString(1);
+                        DateTime data = dr.GetDateTime(2);
+                        string icone = dr.GetString(3);
+                        itens.Add(new AG_ITEM_PRINCIPAL(id, nome, data, icone));
+                    }
+                }
+                conn.Close();
+
+                conn.Open();
+                {
+                    // NpgsqlCommand command = new NpgsqlCommand("SELECT * FROM AG_ITEM_PRINCIPAL", conn);
+                    NpgsqlCommand command2 = new NpgsqlCommand("SELECT * FROM AG_CUSTO_VARIADO ", conn);
+
+                    NpgsqlDataReader dr2 = command2.ExecuteReader();
+                    while (dr2.Read())
+                    {
+                        int id = dr2.GetInt32(1);
+                        string descricao = dr2.GetString(2);
+                        float valor = dr2.GetFloat(3);
+                        string unidade_medida = dr2.GetString(4);
+                        int quantidade = dr2.GetInt32(5);
+                        DateTime data_inserido = dr2.GetDateTime(6);
+
+                        foreach(AG_ITEM_PRINCIPAL item in itens)
+                        {
+                            if(item.ID_ITEM == int.Parse(dr2.GetString(0)))
+                            {
+                                item.custosVariados.Add(new AG_CUSTO_VARIADO(id, descricao, valor, unidade_medida, quantidade, data_inserido));
+                                break;
+                            }
+                        }
+
+                    }
+                }
+                conn.Close();
+                conn.Open();
+
+                {
+                    // NpgsqlCommand command = new NpgsqlCommand("SELECT * FROM AG_ITEM_PRINCIPAL", conn);
+                    NpgsqlCommand command3 = new NpgsqlCommand("SELECT * FROM AG_CUSTO_FIXO  ", conn);
+
+                    NpgsqlDataReader dr3 = command3.ExecuteReader();
+                    while (dr3.Read())
+                    {
+                        int id = dr3.GetInt32(1);
+                        string descricao = dr3.GetString(2);
+                        float valor = dr3.GetFloat(3);
+                        string unidade_medida = dr3.GetString(4);
+                        int quantidade = dr3.GetInt32(5);
+                        DateTime data_inserido = dr3.GetDateTime(6);
+
+                        foreach (AG_ITEM_PRINCIPAL item in itens)
+                        {
+                            if (item.ID_ITEM == int.Parse(dr3.GetString(0)))
+                            {
+                                item.custosVariados.Add(new AG_CUSTO_VARIADO(id, descricao, valor, unidade_medida, quantidade, data_inserido));
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                //Console.WriteLine("I hope that works");
+                //NpgsqlDataReader dr = command.ExecuteReader();
 
                 /*
                 while (dr.Read())

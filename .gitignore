@@ -1,0 +1,9 @@
+
+
+*.dll
+*.pdb
+
+# exclude everything
+Debug/
+.vs/
+bin/

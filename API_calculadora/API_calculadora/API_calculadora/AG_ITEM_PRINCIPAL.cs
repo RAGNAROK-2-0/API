@@ -13,9 +13,9 @@ namespace API_calculadora.Models
         public DateTime DATA_INSERIDO { get; set; }
         public string NOME_ICONE { get; set; }
 
-        private List<AG_CUSTO_VARIADO> custosVariados = new List<AG_CUSTO_VARIADO>();
+        public List<AG_CUSTO_VARIADO> custosVariados = new List<AG_CUSTO_VARIADO>();
 
-        private List<AG_CUSTO_FIXO> custosFixos = new List<AG_CUSTO_FIXO>();
+        public List<AG_CUSTO_FIXO> custosFixos = new List<AG_CUSTO_FIXO>();
 
         public AG_ITEM_PRINCIPAL(int id, string nome, DateTime data, string icone)
         {
