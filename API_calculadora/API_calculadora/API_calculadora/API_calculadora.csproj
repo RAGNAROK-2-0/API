@@ -126,14 +126,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="custoVariadoController .cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="AG_CUSTO_FIXO.cs" />
     <Compile Include="AG_CUSTO_VARIADO.cs" />
     <Compile Include="AG_ITEM_PRINCIPAL.cs" />
+    <Compile Include="custoFixoController.cs" />
     <Compile Include="ItemsController.cs" />
-    <Compile Include="dbConnections.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
