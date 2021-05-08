@@ -12,6 +12,8 @@ namespace API_calculadora.Controllers
 {
     public class ItemsController : ApiController
     {
+        private string connectionName = "User ID =lmzbqjgdarlvte; Password =1bb829a00da2d53999826b2e32b86af9aff29a33a7d9fff483f6f1f7f4f87b61; Host =ec2-52-87-107-83.compute-1.amazonaws.com; Port =5432; Database =db9lde3i86qlva; Pooling = true; Use SSL Stream = True; SSL Mode = Require; TrustServerCertificate = True; ";
+
         private static List<AG_ITEM_PRINCIPAL> itens = new List<AG_ITEM_PRINCIPAL>();
 
         //[HttpGet]
@@ -101,7 +103,7 @@ DATA_INSERIDO TIMESTAMP NOT NULL,
             //var connString = "Server=ec2-23-21-229-200.compute-1.amazonaws.com;Port=5432;User Id=qplkemryuxkzar;Password=b5b4b8a68c0eb36a8d7d28d4a1a3c2d6fe3ed8d75badd09f611ade3a38100f69;Database=d1n6ia2nei0rp0;";
 
 
-            using (var conn = new NpgsqlConnection("User ID =lmzbqjgdarlvte; Password =1bb829a00da2d53999826b2e32b86af9aff29a33a7d9fff483f6f1f7f4f87b61; Host =ec2-52-87-107-83.compute-1.amazonaws.com; Port =5432; Database =db9lde3i86qlva; Pooling = true; Use SSL Stream = True; SSL Mode = Require; TrustServerCertificate = True; "))
+            using (var conn = new NpgsqlConnection(connectionName))
             {
                 conn.Open();
 
@@ -238,11 +240,10 @@ DATA_INSERIDO TIMESTAMP NOT NULL,
 
         }
 
-
-
+        
         public string addItem(string Nome, string Icone)
         {
-            using (NpgsqlConnection conn = new NpgsqlConnection("User ID =lmzbqjgdarlvte; Password =1bb829a00da2d53999826b2e32b86af9aff29a33a7d9fff483f6f1f7f4f87b61; Host =ec2-52-87-107-83.compute-1.amazonaws.com; Port =5432; Database =db9lde3i86qlva; Pooling = true; Use SSL Stream = True; SSL Mode = Require; TrustServerCertificate = True; "))
+            using (NpgsqlConnection conn = new NpgsqlConnection(connectionName))
             {
                 conn.Open();
 
@@ -269,7 +270,7 @@ DATA_INSERIDO TIMESTAMP NOT NULL,
         public string alterItem(string ItemId, string Nome, string Icone)
         {
 
-            using (var conn = new NpgsqlConnection("User ID =lmzbqjgdarlvte; Password =1bb829a00da2d53999826b2e32b86af9aff29a33a7d9fff483f6f1f7f4f87b61; Host =ec2-52-87-107-83.compute-1.amazonaws.com; Port =5432; Database =db9lde3i86qlva; Pooling = true; Use SSL Stream = True; SSL Mode = Require; TrustServerCertificate = True; "))
+            using (var conn = new NpgsqlConnection(connectionName))
             {
                 conn.Open();
 
@@ -304,7 +305,7 @@ DATA_INSERIDO TIMESTAMP NOT NULL,
 
         public string Delete(string Id)
         {
-            using (var conn = new NpgsqlConnection("User ID =lmzbqjgdarlvte; Password =1bb829a00da2d53999826b2e32b86af9aff29a33a7d9fff483f6f1f7f4f87b61; Host =ec2-52-87-107-83.compute-1.amazonaws.com; Port =5432; Database =db9lde3i86qlva; Pooling = true; Use SSL Stream = True; SSL Mode = Require; TrustServerCertificate = True; "))
+            using (var conn = new NpgsqlConnection(connectionName))
             {
                 conn.Open();
 

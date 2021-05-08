@@ -134,11 +134,13 @@
     <Compile Include="AG_CUSTO_VARIADO.cs" />
     <Compile Include="AG_ITEM_PRINCIPAL.cs" />
     <Compile Include="custoFixoController.cs" />
+    <Compile Include="InstallConstroller.cs" />
     <Compile Include="ItemsController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

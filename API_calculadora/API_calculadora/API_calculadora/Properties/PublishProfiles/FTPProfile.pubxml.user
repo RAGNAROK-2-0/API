@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAdA1uZWLJrkOXgN8mZTcxDQAAAAACAAAAAAAQZgAAAAEAACAAAAC6gwdH2yU8RhQYESsJn5yKgxh044Nmro2Fk5Qmc7EpTQAAAAAOgAAAAAIAACAAAADjVcBwef0alPbgd2iWE4SSKRcdJ1GUwcoSoaSYZUi2PiAAAAATR4G/sJeWJ7HiZ0v6HyFkLbWVUHziLLOjOvPzQttLqkAAAACbFMfBOPGYYvp2mF0ZOo5z485WCOo++VHaEfrMiiN14t7xRtB2T9c0IUUYmJc9dKk8TftMPqwEQwGisWLNhzk6</EncryptedPassword>
+    <_PublishTargetUrl>ftp://198.37.116.25</_PublishTargetUrl>
+    <History>True|2021-05-08T16:05:27.9277063Z;True|2021-05-08T10:12:09.2334318-03:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/API_calculadora.dll">
+      <publishTime>05/08/2021 13:04:24</publishTime>
+    </File>
+    <File Include="bin/API_calculadora.pdb">
+      <publishTime>05/08/2021 13:04:24</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>04/16/2020 20:38:42</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>04/16/2020 20:38:56</publishTime>
+    </File>
+    <File Include="bin/EntityFramework6.Npgsql.dll">
+      <publishTime>10/10/2019 03:39:00</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Bcl.AsyncInterfaces.dll">
+      <publishTime>09/13/2019 02:28:52</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>04/22/2019 01:06:16</publishTime>
+    </File>
+    <File Include="bin/Npgsql.dll">
+      <publishTime>07/19/2020 10:21:28</publishTime>
+    </File>
+    <File Include="bin/Npgsql.pdb">
+      <publishTime>07/19/2020 10:21:28</publishTime>
+    </File>
+    <File Include="bin/System.Buffers.dll">
+      <publishTime>05/15/2018 13:29:34</publishTime>
+    </File>
+    <File Include="bin/System.Memory.dll">
+      <publishTime>04/17/2019 16:24:34</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>11/28/2018 13:00:36</publishTime>
+    </File>
+    <File Include="bin/System.Numerics.Vectors.dll">
+      <publishTime>05/15/2018 13:29:44</publishTime>
+    </File>
+    <File Include="bin/System.Runtime.CompilerServices.Unsafe.dll">
+      <publishTime>02/19/2020 10:05:16</publishTime>
+    </File>
+    <File Include="bin/System.Text.Encodings.Web.dll">
+      <publishTime>09/13/2019 02:28:36</publishTime>
+    </File>
+    <File Include="bin/System.Text.Json.dll">
+      <publishTime>05/14/2015 11:56:56</publishTime>
+    </File>
+    <File Include="bin/System.Threading.Tasks.Extensions.dll">
+      <publishTime>02/19/2020 10:05:18</publishTime>
+    </File>
+    <File Include="bin/System.ValueTuple.dll">
+      <publishTime>05/15/2018 13:29:52</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>11/28/2018 13:02:56</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>04/17/2021 22:31:50</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>05/08/2021 10:11:07</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -13,12 +13,15 @@ namespace API_calculadora.Controllers
     public class custoVariadoController : ApiController
     {
 
+        private string connectionName = "User ID =lmzbqjgdarlvte; Password =1bb829a00da2d53999826b2e32b86af9aff29a33a7d9fff483f6f1f7f4f87b61; Host =ec2-52-87-107-83.compute-1.amazonaws.com; Port =5432; Database =db9lde3i86qlva; Pooling = true; Use SSL Stream = True; SSL Mode = Require; TrustServerCertificate = True; ";
+
+
         public AG_CUSTO_VARIADO cVariadoList;
 
         public AG_CUSTO_VARIADO Get(int Id) //get by ID_CUSTO_FIXO
         {
 
-            using (var conn = new NpgsqlConnection("User ID =lmzbqjgdarlvte; Password =1bb829a00da2d53999826b2e32b86af9aff29a33a7d9fff483f6f1f7f4f87b61; Host =ec2-52-87-107-83.compute-1.amazonaws.com; Port =5432; Database =db9lde3i86qlva; Pooling = true; Use SSL Stream = True; SSL Mode = Require; TrustServerCertificate = True; "))
+            using (var conn = new NpgsqlConnection(connectionName))
             {
                 conn.Open();
                 AG_CUSTO_VARIADO cVariadoList;
@@ -52,7 +55,7 @@ namespace API_calculadora.Controllers
         public string Delete(string Id)
         {
             NpgsqlDataReader dr;
-            using (var conn = new NpgsqlConnection("User ID =lmzbqjgdarlvte; Password =1bb829a00da2d53999826b2e32b86af9aff29a33a7d9fff483f6f1f7f4f87b61; Host =ec2-52-87-107-83.compute-1.amazonaws.com; Port =5432; Database =db9lde3i86qlva; Pooling = true; Use SSL Stream = True; SSL Mode = Require; TrustServerCertificate = True; "))
+            using (var conn = new NpgsqlConnection(connectionName))
             {
                 conn.Open();
 
@@ -69,7 +72,7 @@ namespace API_calculadora.Controllers
         public string Post(string ItemId, string Desc, string valor, string um, string qt)
         {
             NpgsqlDataReader dr;
-            using (var conn = new NpgsqlConnection("User ID =lmzbqjgdarlvte; Password =1bb829a00da2d53999826b2e32b86af9aff29a33a7d9fff483f6f1f7f4f87b61; Host =ec2-52-87-107-83.compute-1.amazonaws.com; Port =5432; Database =db9lde3i86qlva; Pooling = true; Use SSL Stream = True; SSL Mode = Require; TrustServerCertificate = True; "))
+            using (var conn = new NpgsqlConnection(connectionName))
             {
                 conn.Open();
 
@@ -90,7 +93,7 @@ namespace API_calculadora.Controllers
             if (type == "update")
             {
                 NpgsqlDataReader dr;
-                using (var conn = new NpgsqlConnection("User ID =lmzbqjgdarlvte; Password =1bb829a00da2d53999826b2e32b86af9aff29a33a7d9fff483f6f1f7f4f87b61; Host =ec2-52-87-107-83.compute-1.amazonaws.com; Port =5432; Database =db9lde3i86qlva; Pooling = true; Use SSL Stream = True; SSL Mode = Require; TrustServerCertificate = True; "))
+                using (var conn = new NpgsqlConnection(connectionName))
                 {
                     conn.Open();
 
